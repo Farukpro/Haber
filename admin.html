@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Paneli - Yönetim</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body id="admin-page">
+
+    <header class="header">
+        <a href="index.html" class="logo">Taze Haberler</a>
+        <nav class="nav">
+            <ul class="nav-list">
+                <li><a href="index.html">Anasayfa</a></li>
+                <li><a href="archive.html">Arşiv</a></li>
+            </ul>
+        </nav>
+        <div class="header-controls">
+            <button id="darkModeToggle" class="mode-toggle" aria-label="Gece Modu"></button>
+            <button class="menu-toggle" aria-label="Menü">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <h1 class="page-title">Admin Paneli</h1>
+            
+            <div class="admin-grid">
+                
+                <section class="admin-form-section">
+                    <h2 class="section-title">Haber Ekle/Düzenle</h2>
+                    <form id="newsForm" class="news-form">
+                        <input type="hidden" id="newsId">
+                        <div class="form-group">
+                            <label for="newsTitle">Haber Başlığı</label>
+                            <input type="text" id="newsTitle" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="newsExcerpt">Kısa Açıklama (Özet)</label>
+                            <textarea id="newsExcerpt" rows="4" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="newsImageFile">Görsel (Dosyadan)</label>
+                            <input type="file" id="newsImageFile" accept="image/*">
+                        </div>
+                        <div class="form-group or-divider">
+                            <span>YA DA</span>
+                        </div>
+                        <div class="form-group">
+                            <label for="newsImageUrl">Görsel (URL)</label>
+                            <input type="url" id="newsImageUrl" placeholder="https://">
+                        </div>
+                        <div class="form-group">
+                            <label for="newsContent">Haber İçeriği</label>
+                            <textarea id="newsContent" rows="10" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="newsCategory">Kategori</label>
+                            <select id="newsCategory" required>
+                                <option value="gundem">Gündem</option>
+                                <option value="spor">Spor</option>
+                                <option value="ekonomi">Ekonomi</option>
+                            </select>
+                        </div>
+                        <button type="submit" id="submitBtn" class="submit-btn">Haberi Ekle</button>
+                        <button type="button" id="clearFormBtn" class="clear-btn">Formu Temizle</button>
+                        <p id="message"></p>
+                    </form>
+                </section>
+
+                <section class="admin-list-section">
+                    <h2 class="section-title">Mevcut Haberler</h2>
+                    <div class="list-controls">
+                        <input type="text" id="filterInput" placeholder="Haberleri filtrele...">
+                    </div>
+                    <ul id="newsList" class="news-admin-list">
+                        </ul>
+                    <p id="noResults" style="display: none;">Hiç haber bulunamadı.</p>
+                </section>
+                
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Taze Haberler. Tüm hakları saklıdır.</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>

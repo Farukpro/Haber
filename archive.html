@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Haber Arşivi</title>
+    <link rel="manifest" href="/manifest.json">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body id="archive-page">
+
+    <header class="header">
+        <a href="index.html" class="logo">Taze Haberler</a>
+        <nav class="nav">
+            <ul class="nav-list">
+                <li><a href="index.html" data-category="anasayfa">Anasayfa</a></li>
+                <li><a href="index.html?category=gundem" data-category="gundem">Gündem</a></li>
+                <li><a href="index.html?category=spor" data-category="spor">Spor</a></li>
+                <li><a href="index.html?category=ekonomi" data-category="ekonomi">Ekonomi</a></li>
+                <li><a href="archive.html" class="active">Arşiv</a></li>
+            </ul>
+        </nav>
+        <div class="header-controls">
+            <button id="darkModeToggle" class="mode-toggle" aria-label="Gece Modu"></button>
+            <button class="menu-toggle" aria-label="Menü">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <h1 class="page-title">Haber Arşivi</h1>
+            <div class="controls">
+                <input type="text" id="searchInput" placeholder="Ara...">
+                <select id="sortSelect">
+                    <option value="date-desc">En Yeni</option>
+                    <option value="date-asc">En Eski</option>
+                    <option value="title-asc">A'dan Z'ye</option>
+                    <option value="title-desc">Z'den A'ya</option>
+                </select>
+            </div>
+            <section id="archiveContainer" class="news-grid">
+                </section>
+            <div id="pagination" class="pagination"></div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Taze Haberler. Tüm hakları saklıdır.</p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+    <script src="archive.js"></script>
+</body>
+</html>
